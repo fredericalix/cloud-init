@@ -10,7 +10,7 @@ zpool set autoexpand=on zroot
 zpool online -e zroot da0p2
 
 #set_key
-fetch http://169.254.169.254/openstack/latest/meta_data.json -q -o - | jq -r '.keys[] |.data' > /home/admin/.ssh/authorized_keys
+fetch http://169.254.169.254/openstack/latest/meta_data.json -q -o - | jq -r '.keys[] |.data' > /home/freebsd/.ssh/authorized_keys
 
 #set_hostname
 FQDN=`fetch http://169.254.169.254/openstack/latest/meta_data.json -q -o - | jq '.hostname' | sed 's/.novalocal//g'`
