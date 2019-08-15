@@ -19,7 +19,7 @@ sed -i "" "s/hostname.*/hostname=$FQDN/g" /etc/rc.conf
 hostname `echo $FQDN | tr -d '"'`
 
 #set root passwd
-pw mod user root -w random > /dev/null
+pw mod user root -w no > /dev/null
 
 #run userdata
 fetch http://169.254.169.254/latest/user-data -q -o - | sh
